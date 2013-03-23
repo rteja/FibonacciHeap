@@ -1,4 +1,4 @@
-#include "dijkastra.h"
+e#include "dijkastra.h"
 #include "fibonacciheap.h"
 
 #define INFINITY (unsigned int )(-1)
@@ -54,7 +54,5 @@ void Dijkastra(graph *g)
 	       relax(u, u->edges[it], u->edges[it]->cost);
 	  
      }
-
-     
 
 }

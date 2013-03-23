@@ -11,18 +11,22 @@ struct
 {
      unsigned int id;
      bool visited;
+     std::vector<edge*> out;
+     vertex *p; //path predecessor
+     int d; //shortest path distance
 } vertex;
 
-struct
+struct 
 {
      vertex ends[2];
+     int cost;
 } edge;
 
 class graph
 {
-     std::vector<edge> edges;
-     vertex *s;  //designated vertex of the graph.
-
+     std::vector<edge*> edges;
+     std::vertex<vertex*> s;  //designated vertices of the graph.
+     
 public:
      graph();
      ~graph();

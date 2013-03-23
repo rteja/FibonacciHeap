@@ -2,7 +2,10 @@
 #define _DIJKASTRA_H_
 
 #include "fibonacciheap.h"
-#include "graph.h"
+#include "dgraph.h"
+
+
+void  Dijkstra(graph *g, vertex *s);
 
 
 

@@ -1,0 +1,117 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Mar 24 10:12:35 2013
+;; Desktop file format version 206
+;; Emacs version 24.2.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/bellmanford.cpp"
+  "bellmanford.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1571
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dijkastra.cpp"
+  "dijkastra.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1030
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
+  "dgraph.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/graph.h"
+  "graph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dijkastra.h"
+  "dijkastra.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
+  "dgraph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/bellmanford.h"
+  "bellmanford.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/FibHeap/src/fibonacciheap.cpp"
+  "fibonacciheap.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/FibHeap/include/fibonacciheap.h"
+  "fibonacciheap.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

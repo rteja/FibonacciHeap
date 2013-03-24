@@ -118,8 +118,8 @@ DistanceMatrix Johnson(graph *g)
 	       unsigned int v_index = u->edges[is]->ends[DESTINATION];
 	       vertex *v = g->get_vertex(v_index);
 	       assert(v);
-	       int new_cost = u->edges[is]->cost + h[v_index] - h[it];
-	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], new_cost);
+	       int old_cost = u->edges[is]->cost + h[v_index] - h[it];
+	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], old_cost);
 	       
 	  }
      }

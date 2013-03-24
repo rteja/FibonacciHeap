@@ -2,18 +2,18 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Mar 24 20:19:01 2013
+;; Created Sun Mar 24 20:38:47 2013
 ;; Desktop file format version 206
 ;; Emacs version 24.2.1
 
 ;; Global section:
 (setq desktop-missing-file-warning nil)
-(setq tags-file-name nil)
-(setq tags-table-list nil)
+(setq tags-file-name "/home/raghu/Academics/Algorithms/Assigments/TAGS")
+(setq tags-table-list '("/home/raghu/Academics/Algorithms/Assigments/TAGS"))
 (setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h" "/home/raghu/Academics/Algorithms/Assigments/"))
+(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h" "/home/raghu/Academics/Algorithms/Assigments/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
@@ -21,11 +21,22 @@
   "johnson.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  429
+  1
   '(2345 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
+  "dgraph.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1625
+  '(3449 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
@@ -45,17 +56,6 @@
   '(abbrev-mode auto-complete-mode)
   779
   '(1347 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
-  "dgraph.cpp"
-  'c++-mode
-  '(abbrev-mode auto-complete-mode)
-  3449
-  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))

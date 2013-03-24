@@ -67,7 +67,8 @@ bool dgraph::is_connected()
      std::vector<vertex*> v_stack;
      int it = 0;
      v_stack.push_back(v);
-     
+
+     // do a BFS which will serve as a reachability test.
      while(v_stack.size())
      {
 	  v = v_stack[v_stack.size() - 1];
@@ -120,8 +121,8 @@ unsigned int dgraph::add_edge(unsigned int u, unsigned int v, int cost)
 
 unsigned int dgraph::del_edge(unsigned int u, unsigned int v)
 {
-     assert (u > (vsize() - 1));
-     assert (v > (vsize() - 1));
+     assert(u > (vsize() - 1));
+     assert(v > (vsize() - 1));
 
      unsigned int it = 0;
 

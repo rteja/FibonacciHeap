@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Mar 24 10:12:35 2013
+;; Created Sun Mar 24 18:05:21 2013
 ;; Desktop file format version 206
 ;; Emacs version 24.2.1
 
@@ -13,16 +13,71 @@
 (setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/"))
+(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h" "/home/raghu/Academics/Algorithms/Assigments/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/johnson.cpp"
+  "johnson.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  419
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
+  "johnson.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  197
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/bellmanford.h"
+  "bellmanford.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  532
+  '(590 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
+  "dgraph.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  1066
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
+  "dgraph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  481
+  '(992 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
 (desktop-create-buffer 206
   "/home/raghu/Academics/Algorithms/Assigments/Graph/src/bellmanford.cpp"
   "bellmanford.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  1571
-  '(nil nil)
+  558
+  '(2958 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -33,17 +88,6 @@
   'c++-mode
   '(abbrev-mode auto-complete-mode)
   1030
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
-  "dgraph.cpp"
-  'c++-mode
-  '(abbrev-mode auto-complete-mode)
-  1
   '(nil nil)
   nil
   nil
@@ -63,28 +107,6 @@
 (desktop-create-buffer 206
   "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dijkastra.h"
   "dijkastra.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
-  "dgraph.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/bellmanford.h"
-  "bellmanford.h"
   'c-mode
   '(abbrev-mode auto-complete-mode)
   1

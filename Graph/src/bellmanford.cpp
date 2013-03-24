@@ -35,7 +35,7 @@ bool relax(vertex *u, vertex *v, int edge_cost)
 }
 
 //Standard BellmanFord implementation which is of O(VE) complexity.
-bool BellmanFord(graph *g, vertex *s)
+bool BellmanFord(dgraph *g, vertex *s)
 {
      assert(g);
      assert(s);
@@ -85,13 +85,13 @@ bool BellmanFord(graph *g, vertex *s)
 }
 
 //Implement for multiple sources
-bool BellmanFord(graph *g, std::vector<vertex*> s)
+bool BellmanFord(dgraph *g, std::vector<vertex*> s)
 {
      return true;
 }
 
 //BellmanFord Algorithm Yen's Modification.
-bool BellmanFord_Yen(graph *g, vertex *s)
+bool BellmanFord_Yen(dgraph *g, vertex *s)
 {
      assert(g);
      assert(s);
@@ -165,5 +165,11 @@ bool BellmanFord_Yen(graph *g, vertex *s)
 
      }	  
 	  
+     return true;
+}
+
+//Implement Bellman Ford Yen's modification for multiple sources.
+bool BellmanFord_Yen(dgraph *g, std::vector<vertex*> s)
+{
      return true;
 }

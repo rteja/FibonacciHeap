@@ -35,6 +35,7 @@ bool relax(vertex *u, vertex *v, int edge_cost)
      return false;
 }
 
+//Standard BellmanFord implementation which is of O(VE) complexity.
 bool BellmanFord(graph *g, vertex *s)
 {
      initialize(g, s);
@@ -75,5 +76,18 @@ bool BellmanFord(graph *g, vertex *s)
      }	  
      return true;
 
+     
+}
+
+//Implement for multiple sources
+bool BellmanFord(graph *g, std::vector<vertex*> s)
+{
+     return true;
+}
+
+
+//BellmanFord Algorithm Yen's Modification.
+bool BellmanFord_Yen(graph *g, vertex *s)
+{
      
 }

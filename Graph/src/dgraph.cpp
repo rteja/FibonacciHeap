@@ -145,3 +145,45 @@ unsigned int dgraph::add_vertex()
      return vsize();
 }
 
+void dgraph::add_designated_vertex(unsigned int v_index)
+{
+     assert(v_index < vsize());
+
+     s->push_back(vertices[v_index]);
+}
+
+bool dgraph::del_designated_vertex(unsigned int v_index)
+{
+     assert(v_index < vsize());
+
+     vertex *d = vertices[v_index];
+
+     unsigned int it = 0;
+     for (it = 0 ; it < s.size(); it++)
+     {
+	  if (s[it] == d)
+	       break;
+     }
+
+     if (it < s.size())
+     {
+	  s->erase(s->begin() + it);
+	  return true;
+     }
+
+     return false;
+
+}
+
+unsigned int dgraph::n_designated_sources()
+{
+     return s.size();
+}
+
+vertex*  dgraph::get_designated_source(unsigned int index)
+{
+     assert(index < (s.size() - 1));
+     
+     return s[index];
+}
+

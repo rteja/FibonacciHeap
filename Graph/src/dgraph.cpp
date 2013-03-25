@@ -62,7 +62,7 @@ unsigned int dgraph::esize()
 
 bool dgraph::is_connected()
 {
-     vertex *v = vertices[vertices.size() - 1];
+     vertex *v = vertices[vsize() - 1];
      unsigned int visited = 0;
      std::vector<vertex*> v_stack;
      int it = 0;
@@ -82,7 +82,6 @@ bool dgraph::is_connected()
 			 v_stack.push_back(vertices[v->edges[it]->ends[1]]);
 	  }
 	  v_stack.pop_back();
-	  
      }
 
      return (visited == vsize());
@@ -106,7 +105,7 @@ unsigned int dgraph::add_edge(unsigned int u, unsigned int v, int cost)
 	  if (u->edges[it]->ends[1] == v)
 	  {
 	       u->edges[it]->cost = cost;
-	       return u->edges;
+	       return u->edges.size();
 	  }
      }
 

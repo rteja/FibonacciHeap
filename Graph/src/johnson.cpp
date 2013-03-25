@@ -68,7 +68,6 @@ DistanceMatrix Johnson(graph *g)
      // w'(u,v) = w(u,v) + h(u) - h(v)
      for (it = 0; it < g->vsize(); it++)
      {
-	  
 	  vertex *u = g->get_vertex(it);
 	  assert(u);
 
@@ -81,7 +80,6 @@ DistanceMatrix Johnson(graph *g)
 	       assert(v);
 	       int new_cost = u->edges[is]->cost + h[it] - h[v_index];
 	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], new_cost);
-	       
 	  }
      }
      
@@ -89,7 +87,7 @@ DistanceMatrix Johnson(graph *g)
      
      for (it = 0; it < g->vsize(); it++)
      {
-	  Dijkastra(g, g->get_vertex(it));
+	  Dijkstra(g, g->get_vertex(it));
 	  
 	  unsigned is = 0;
 	  for (is = 0; is < g->vsize(); is++)
@@ -100,14 +98,12 @@ DistanceMatrix Johnson(graph *g)
 	       assert(v);
 	       
 	       D.SetDistance(it, v_index, v->d + h[v_index] - h[it]);
-	       
 	  }
      }
 
      // Revert back the original edge weights.
      for (it = 0; it < g->vsize(); it++)
      {
-	  
 	  vertex *u = g->get_vertex(it);
 	  assert(u);
 
@@ -120,7 +116,6 @@ DistanceMatrix Johnson(graph *g)
 	       assert(v);
 	       int old_cost = u->edges[is]->cost + h[v_index] - h[it];
 	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], old_cost);
-	       
 	  }
      }
      

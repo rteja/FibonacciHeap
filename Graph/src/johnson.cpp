@@ -48,21 +48,23 @@ int DistanceMatrix::GetDistance(unsigned int i, unsigned int j)
 void DistanceMatrix::Print()
 {
      int i = 0;
-     printf("DistanceMatrix:\n");[5~
+     printf("DistanceMatrix:\n");
      for (i = 0; i < vertices * vertices; i++)
      {
 	  if (i % vertices == 0)
 	       printf("\n");
+
 	  
-	  if (D[i] < INFINITY)
-	       printf("%d\t", D[i]);
+	  if ((int)D[i] < (int)INFINITY)
+	       printf("%3d\t", D[i]);
 	  else
-	       printf("%s\t", "--");
+	       printf("%s\t", "---");
+	  
+
      }
      printf("\n");
      return;
 }
-
 
 DistanceMatrix *Johnson(dgraph *g)
 {
@@ -156,7 +158,7 @@ DistanceMatrix *Johnson(dgraph *g)
 	  }
      }
      
-     //Remove the extra edge
+     //Remove the extra vertex.
 
      return D;
 }

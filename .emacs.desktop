@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed May  1 16:44:51 2013
+;; Created Wed May  1 20:59:49 2013
 ;; Desktop file format version 206
 ;; Emacs version 24.2.1
 
@@ -21,8 +21,30 @@
   "johnson.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  1041
-  '(3452 nil)
+  3515
+  '(902 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
+  "dgraph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  1256
+  '(1038 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
+  "johnson.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  190
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
@@ -89,28 +111,6 @@
   '(abbrev-mode auto-complete-mode)
   95
   '(95 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
-  "johnson.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  533
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
-  "dgraph.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  143
-  '(1038 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))

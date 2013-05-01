@@ -5,6 +5,9 @@
 
 #include "fibonacciheap.h"
 
+#include <stdlib.h>
+#include <string.h>
+
 
 FibHeapNode*  FibHeapNode_Create()
 {
@@ -21,6 +24,15 @@ FibHeapNode*  FibHeapNode_Create(int key, void* payload)
      FibHeapNode *node = FibHeapNode_Create();
      node->key = key;
      node->payload = payload;
+
+     if (payload)
+	  memcpy(payload, &node, sizeof(FibHeapNode*));
+     /*
+     FibHeapNode *tmp = (FibHeapNode*) payload;
+     //(FibHeapNode*) (payload) = node;
+     *tmp = node;
+     */
+
      return node;
 }
 
@@ -52,10 +64,26 @@ FibHeapNode*  FibHeapNode_DetachLL(FibHeapNode *node)
      // This is not fool proof what if the linked list 
      // contains only one element?
      // as of now, assert it!
-     assert(node->left != node);
+     //assert(node->left != node);
+
+     FibHeapNode *lnode = node->left;
 
      node->left->right = node->right;
      node->right->left = node->left;
+     
+     
+     
+     // Decrease the parent degree
+     if (node->parent)
+     {
+	  node->parent->degree--;
+	  if (node->parent->degree == 0)
+	       node->parent->children = NULL;
+	  else
+	       node->parent->children = lnode; 
+     }
+     
+     node->parent = NULL;
 
      return (node->right);
 }
@@ -206,6 +234,8 @@ void  FibonacciHeap::link(FibHeapNode *m, FibHeapNode *n)
 	  m->left = m;
 	  m->right = m;
 	  n->children = m;
+	  n->degree = 1;
+	  m->parent = n;
      }
      else
 	  FibHeapNode_InsertLL(n->children, m);
@@ -247,7 +277,7 @@ void  FibonacciHeap::consolidate()
 		    FibHeapNode *z = x;
 		    x = y; y = z;
 	       }
-	       printf("linking %d to %d..\n", y->key, x->key);
+	       //printf("linking %d to %d..\n", y->key, x->key);
 	       link(y, x);
 	       A[d] = NULL;
 	       d++;
@@ -283,7 +313,6 @@ void  FibonacciHeap::consolidate()
 void*  FibonacciHeap::ExtractMin()
 {
      void *payload = NULL;
-
      if (min)
      {
 	  payload = min->payload;
@@ -291,13 +320,18 @@ void*  FibonacciHeap::ExtractMin()
 	  // Attach the children list to the root list
 	  FibHeapNode *children = min->children;
 	  min->children = NULL;
+
 	  FibHeapNode_MergeLL(min, children);
-	  n += min->degree;
+	  //n += min->degree;
+
+	  min->degree = 0;
 
 	  // Detach current minimum
 	  if (min->left != min)   // If there are more than one elements in the root list.
 	  {
 	       FibHeapNode_DetachLL(min);
+	       
+	       
 	       FibHeapNode *newMin = min->right;
 	       free(min);
 	       min = newMin;
@@ -320,4 +354,57 @@ void*  FibonacciHeap::ExtractMin()
 
      return payload;
 }
+
+void  FibonacciHeap::cut(FibHeapNode *x, FibHeapNode *y)
+{
+     FibHeapNode_DetachLL(x);
+     //y->degree--;
+
+     // Add x to the root list.
+     FibHeapNode_InsertLL(min, x);
+     x->mark = false;
+
+     return;
+}
+
+void  FibonacciHeap::cascading_cut(FibHeapNode *y)
+{
+     FibHeapNode *z = y->parent;
+     
+     if (z)
+     {
+	  if (y->mark == false)
+	       y->mark = true;
+	  else
+	  {
+	       cut(y, z);
+	       cascading_cut(z);
+	  }
+	  
+     }
+
+     return;
+}
+
+void  FibonacciHeap::DecreaseKey(FibHeapNode *x, int newKey)
+{
+     assert(x->key > newKey);
+
+     x->key = newKey;
+     FibHeapNode *y = x->parent;
+     
+     if (y && (x->key < y->key) )
+     {
+	  cut(x, y);
+	  cascading_cut(y);
+     }
+
+     if (x->key < min->key)
+     {
+	  min = x;
+     }
+
+     return;
+}
+
 

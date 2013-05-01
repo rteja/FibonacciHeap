@@ -37,6 +37,9 @@ class FibonacciHeap
      // Make m a child of n
      void link(FibHeapNode *m, FibHeapNode *n);
 
+     void cut(FibHeapNode *x, FibHeapNode *y);
+     void cascading_cut(FibHeapNode *x);
+
 public:
      FibonacciHeap();
      ~FibonacciHeap();
@@ -48,6 +51,7 @@ public:
      void *ExtractMin();
      FibHeapNode* UnionHeap(FibonacciHeap *heap);
      
+     void DecreaseKey(FibHeapNode *node, int newKey);
      
 };
 

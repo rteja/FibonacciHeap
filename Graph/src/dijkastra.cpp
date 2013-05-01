@@ -1,9 +1,10 @@
-e#include "dijkastra.h"
+#include "dijkastra.h"
 #include "fibonacciheap.h"
 
-#define INFINITY (unsigned int )(-1)
+#include <assert.h>
 
-void initialize(dgraph *g, vertex *s)
+
+void initialize_d(dgraph *g, vertex *s)
 {
      assert(g);
      assert(s);
@@ -20,7 +21,7 @@ void initialize(dgraph *g, vertex *s)
      return;
 }
 
-void relax(vertex *u, vertex *v, int edge_cost)
+void relax(FibonacciHeap *H, vertex *u, vertex *v, int edge_cost)
 {
      assert(u);
      assert(v);
@@ -28,17 +29,19 @@ void relax(vertex *u, vertex *v, int edge_cost)
 
      if (v->d > (u->d + edge_cost))
      {
+	  H->DecreaseKey(v->carrier, u->d + edge_cost);
 	  v->d = u->d + edge_cost;
 	  v->p = u;
+	  
      }
      return;
 }
 
-void Dijkastra(graph *g)
+void Dijkstra(dgraph *g, vertex *s)
 {
      assert(g);
 
-     initialize(g, g->s[0]);
+     initialize_d(g, s);
      FibonacciHeap v_heap;
      
      unsigned int it = 0;
@@ -51,8 +54,10 @@ void Dijkastra(graph *g)
      {
 	  vertex *u = (vertex*) v_heap.ExtractMin();
 	  for (it = 0; it < u->edges.size(); it++)
-	       relax(u, u->edges[it], u->edges[it]->cost);
-	  
+	  {
+	       vertex *v = g->get_vertex(u->edges[it]->ends[1]);
+	       relax(&v_heap, u, v, u->edges[it]->cost);
+	  }
      }
-
+     return;
 }

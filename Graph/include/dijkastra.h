@@ -4,8 +4,10 @@
 #include "fibonacciheap.h"
 #include "dgraph.h"
 
+#define INFINITY (unsigned int )(100000)
 
-void  Dijkstra(graph *g, vertex *s);
+
+void  Dijkstra(dgraph *g, vertex *s);
 
 
 

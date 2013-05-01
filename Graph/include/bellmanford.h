@@ -3,6 +3,9 @@
 
 #include "dgraph.h"
 
+#define INFINITY (unsigned int )(100000)
+
+
 // Bellman Ford Algorithm for computing single source shortest path.
 // Algorithm returns true of shortest path can be computed, returns false if there is a negetive weight cycle.
 

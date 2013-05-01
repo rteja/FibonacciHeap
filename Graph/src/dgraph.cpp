@@ -90,19 +90,23 @@ bool dgraph::is_connected()
 vertex* dgraph::get_vertex(unsigned int index)
 {
      assert(index >= 0);
-     assert(index < (vsize() - 1));
+     assert(index <= (vsize() - 1));
  
      return (vertices[index]);
 }
 
-unsigned int dgraph::add_edge(unsigned int u, unsigned int v, int cost)
+unsigned int dgraph::add_edge(unsigned int x, unsigned int y, int cost)
 {
-     assert(u < (vsize() - 1));
-     assert(u < (vsize() - 1));
+     assert(x <= (vsize() - 1 ));
+     assert(y <= (vsize() - 1));
+
+     vertex *u = vertices[x];
+     vertex *v = vertices[y];
+
 
      for (unsigned int it = 0; it < u->edges.size(); it++)
      {
-	  if (u->edges[it]->ends[1] == v)
+	  if (get_vertex(u->edges[it]->ends[1]) == v)
 	  {
 	       u->edges[it]->cost = cost;
 	       return u->edges.size();
@@ -110,24 +114,27 @@ unsigned int dgraph::add_edge(unsigned int u, unsigned int v, int cost)
      }
 
      edge *e = (edge *) malloc(sizeof(edge));
-     e->ends[0] = u;
-     e->ends[1] = v;
+     e->ends[0] = x;
+     e->ends[1] = y;
      e->cost = cost;
      
      u->edges.push_back(e);
      return u->edges.size();
 }
 
-unsigned int dgraph::del_edge(unsigned int u, unsigned int v)
+unsigned int dgraph::del_edge(unsigned int x, unsigned int y)
 {
-     assert(u > (vsize() - 1));
-     assert(v > (vsize() - 1));
+     assert(x >= (vsize() - 1));
+     assert(y >= (vsize() - 1));
+
+     vertex *u = get_vertex(x);
+     vertex *v = get_vertex(y);
 
      unsigned int it = 0;
 
      for (it = 0;it < u->edges.size(); it++)
      {
-	  if (u->edges[it]->ends[1] == v)
+	  if (get_vertex(u->edges[it]->ends[1]) == v)
 	       break;
      }
 
@@ -141,48 +148,6 @@ unsigned int dgraph::add_vertex()
 {
      vertex *v = create_vertex();
      vertices.push_back(v);
-     return vsize();
-}
-
-void dgraph::add_designated_vertex(unsigned int v_index)
-{
-     assert(v_index < vsize());
-
-     s->push_back(vertices[v_index]);
-}
-
-bool dgraph::del_designated_vertex(unsigned int v_index)
-{
-     assert(v_index < vsize());
-
-     vertex *d = vertices[v_index];
-
-     unsigned int it = 0;
-     for (it = 0 ; it < s.size(); it++)
-     {
-	  if (s[it] == d)
-	       break;
-     }
-
-     if (it < s.size())
-     {
-	  s->erase(s->begin() + it);
-	  return true;
-     }
-
-     return false;
-
-}
-
-unsigned int dgraph::n_designated_sources()
-{
-     return s.size();
-}
-
-vertex*  dgraph::get_designated_source(unsigned int index)
-{
-     assert(index < (s.size() - 1));
-     
-     return s[index];
+     return (vsize() - 1);
 }
 

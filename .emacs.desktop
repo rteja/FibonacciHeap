@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Mar 25 13:07:37 2013
+;; Created Wed May  1 16:44:51 2013
 ;; Desktop file format version 206
 ;; Emacs version 24.2.1
 
@@ -12,116 +12,28 @@
 (setq tags-table-list '("/home/raghu/Academics/Algorithms/Assigments/TAGS"))
 (setq search-ring nil)
 (setq regexp-search-ring nil)
-(setq register-alist nil)
-(setq file-name-history '("/root/test.org" "/home/raghu/Academics/Algorithms/Assigments/" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h" "/home/raghu/Academics/Algorithms/Assigments/"))
+(setq register-alist '((48 . "#define INFINITY (unsigned int )(100000)\n")))
+(setq file-name-history '("/home/raghu/Academics/Algorithms/Assigments/FibHeap/src/../include/fibonacciheap.h" "/home/raghu/Academics/Algorithms/Assigments/Graph/src/../../FibHeap/src/fibonacciheap.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/root/test.org" "/home/raghu/Academics/Algorithms/Assigments/" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/../src/johnson.cpp" "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h" "/home/raghu/Academics/Algorithms/Assigments/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dijkastra.cpp"
-  "dijkastra.cpp"
-  'c++-mode
-  '(abbrev-mode auto-complete-mode)
-  563
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
 (desktop-create-buffer 206
   "/home/raghu/Academics/Algorithms/Assigments/Graph/src/johnson.cpp"
   "johnson.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  1
-  '(2322 nil)
+  1041
+  '(3452 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/test.org"
-  "test.org"
-  'org-mode
-  nil
-  155
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
 
 (desktop-create-buffer 206
   "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dgraph.cpp"
   "dgraph.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  2589
-  '(3444 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
-  "dgraph.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  505
-  '(779 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
-  "johnson.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  197
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/bellmanford.h"
-  "bellmanford.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  532
-  '(590 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/bellmanford.cpp"
-  "bellmanford.cpp"
-  'c++-mode
-  '(abbrev-mode auto-complete-mode)
-  558
-  '(2958 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/graph.h"
-  "graph.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dijkastra.h"
-  "dijkastra.h"
-  'c-mode
-  '(abbrev-mode auto-complete-mode)
-  1
-  '(nil nil)
+  2077
+  '(1864 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -131,8 +43,74 @@
   "fibonacciheap.cpp"
   'c++-mode
   '(abbrev-mode auto-complete-mode)
-  1
+  631
+  '(574 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/dijkastra.cpp"
+  "dijkastra.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  73
+  '(73 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dijkastra.h"
+  "dijkastra.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  135
+  '(94 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/bellmanford.h"
+  "bellmanford.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  112
+  '(71 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/src/bellmanford.cpp"
+  "bellmanford.cpp"
+  'c++-mode
+  '(abbrev-mode auto-complete-mode)
+  95
+  '(95 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/johnson.h"
+  "johnson.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  533
   '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/dgraph.h"
+  "dgraph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  143
+  '(1038 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -142,7 +120,18 @@
   "fibonacciheap.h"
   'c-mode
   '(abbrev-mode auto-complete-mode)
-  1
+  650
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raghu/Academics/Algorithms/Assigments/Graph/include/graph.h"
+  "graph.h"
+  'c-mode
+  '(abbrev-mode auto-complete-mode)
+  347
   '(nil nil)
   nil
   nil

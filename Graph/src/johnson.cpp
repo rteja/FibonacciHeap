@@ -1,5 +1,9 @@
 #include "johnson.h"
 
+#include <assert.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 DistanceMatrix::DistanceMatrix(int size)
 {
      assert( size >= 0);
@@ -27,8 +31,40 @@ DistanceMatrix::~DistanceMatrix()
      return;
 }
 
+int DistanceMatrix::SetDistance(unsigned int i, unsigned int j, int distance)
+{
+     assert(i < vertices);
+     assert(j < vertices);
 
-DistanceMatrix Johnson(graph *g)
+     D[i * vertices + j] = distance;
+     return distance;
+}
+
+int DistanceMatrix::GetDistance(unsigned int i, unsigned int j)
+{
+     return 0;
+}
+
+void DistanceMatrix::Print()
+{
+     int i = 0;
+     printf("DistanceMatrix:\n");[5~
+     for (i = 0; i < vertices * vertices; i++)
+     {
+	  if (i % vertices == 0)
+	       printf("\n");
+	  
+	  if (D[i] < INFINITY)
+	       printf("%d\t", D[i]);
+	  else
+	       printf("%s\t", "--");
+     }
+     printf("\n");
+     return;
+}
+
+
+DistanceMatrix *Johnson(dgraph *g)
 {
      assert(g);
 
@@ -49,12 +85,12 @@ DistanceMatrix Johnson(graph *g)
      {
 	  // Return an invalid matrix if Bellman Ford algorithm returns false.
 	  // This means there exits a negetive weight cycle.
-	  return DistanceMatrix(0);
+	  return (new DistanceMatrix(0));
      }
 
      // If Bellman Ford returns true then d-values of all the vertices contain
      // shortest distances to all vertices from newly created vertex (v_id).
-     int *h = calloc(g->vsize(), sizeof(int));
+     int *h = (int*) calloc(g->vsize(), sizeof(int));
      assert(h);
 
      for (it = 0; it < g->vsize(); it++)
@@ -79,25 +115,26 @@ DistanceMatrix Johnson(graph *g)
 	       vertex *v = g->get_vertex(v_index);
 	       assert(v);
 	       int new_cost = u->edges[is]->cost + h[it] - h[v_index];
-	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], new_cost);
+	       u->edges[is]->cost = new_cost;
+	       //g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], new_cost);
 	  }
      }
      
-     DistanceMatrix D = DistanceMatrix(g->vsize());
+     DistanceMatrix *D = new DistanceMatrix(g->vsize());
      
      for (it = 0; it < g->vsize(); it++)
      {
+	  vertex *u = g->get_vertex(it);
+
 	  Dijkstra(g, g->get_vertex(it));
 	  
-	  unsigned is = 0;
+	  unsigned int is = 0;
 	  for (is = 0; is < g->vsize(); is++)
 	  {
-	       assert(u->edges[is]);
-	       unsigned int v_index = u->edges[is]->ends[DESTINATION];
-	       vertex *v = g->get_vertex(v_index);
+	       vertex *v = g->get_vertex(is);
 	       assert(v);
 	       
-	       D.SetDistance(it, v_index, v->d + h[v_index] - h[it]);
+	       D->SetDistance(it, is, v->d + h[is] - h[it]);
 	  }
      }
 
@@ -115,9 +152,11 @@ DistanceMatrix Johnson(graph *g)
 	       vertex *v = g->get_vertex(v_index);
 	       assert(v);
 	       int old_cost = u->edges[is]->cost + h[v_index] - h[it];
-	       g->set_edge_cost(it, u->edges[is]->ends[DESTINATION], old_cost);
+	       u->edges[is]->cost = old_cost;
 	  }
      }
      
+     //Remove the extra edge
+
      return D;
 }
